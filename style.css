@@ -1,0 +1,224 @@
+:root {
+  font-family: 'Roboto', system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  --primary-color: #1976d2;
+  --hover-color: #1565c0;
+  --bg-color: #f8fafc;
+  --canvas-bg: #ffffff;
+  --toolbar-bg: #ffffff;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 16px;
+  box-sizing: border-box;
+  gap: 16px;
+  position: relative;
+}
+
+.top-actions {
+  display: flex;
+  justify-content: center;
+  padding: 4px 0;
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+.undo-redo-group {
+  display: flex;
+  gap: 4px;
+  background-color: var(--toolbar-bg);
+  padding: 4px;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.canvas-container {
+  flex: 1;
+  position: relative;
+  background-color: var(--canvas-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  margin: 60px 16px 80px;
+  overflow: hidden;
+}
+
+.toolbar {
+  position: fixed;
+  left: 50%;
+  bottom: 16px;
+  transform: translateX(-50%);
+  background-color: var(--toolbar-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  z-index: 1000;
+  max-width: min(800px, calc(100vw - 32px));
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: 24px;
+  background-color: rgba(0, 0, 0, 0.08);
+  margin: 0 4px;
+}
+
+.toolbar-button, .icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  padding: 6px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  background-color: var(--toolbar-bg);
+  color: #333;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  min-width: 32px;
+  height: 32px;
+}
+
+.icon-button {
+  padding: 6px;
+}
+
+.toolbar-button:hover, .icon-button:hover {
+  background-color: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.toolbar-button:active, .icon-button:active {
+  background-color: rgba(0, 0, 0, 0.08);
+}
+
+.toolbar-button.active, .icon-button.active {
+  background-color: rgba(25, 118, 210, 0.08);
+  border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+.toolbar-select, .toolbar-input {
+  padding: 6px 10px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  font-size: 13px;
+  height: 32px;
+  background-color: var(--toolbar-bg);
+  color: #333;
+  transition: all 0.2s ease;
+}
+
+.toolbar-select {
+  min-width: 120px;
+}
+
+.toolbar-input {
+  width: 60px;
+  text-align: center;
+}
+
+.toolbar-select:hover, .toolbar-input:hover {
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.toolbar-select:focus, .toolbar-input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px rgba(25, 118, 210, 0.1);
+}
+
+.color-picker {
+  width: 32px;
+  height: 32px;
+  padding: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: var(--toolbar-bg);
+  transition: all 0.2s ease;
+}
+
+.color-picker:hover {
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+#canvas {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 8px;
+}
+
+.material-icons {
+  font-size: 20px;
+}
+
+/* Disabled state styles */
+.toolbar-button:disabled,
+.icon-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .toolbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .toolbar-group {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .toolbar-select {
+    min-width: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 8px;
+  }
+
+  .canvas-container {
+    margin: 60px 8px 80px;
+  }
+
+  .toolbar {
+    padding: 4px 8px;
+  }
+
+  .toolbar-button, .icon-button {
+    padding: 4px 8px;
+  }
+}
