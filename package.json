@@ -8,6 +8,8 @@
     "build": "vite build",
     "preview": "vite preview"
   },
+  "author": "Sobhik Kumar Sawdagar",
+  "license": "ISC",
   "devDependencies": {
     "vite": "^5.4.2"
   },
