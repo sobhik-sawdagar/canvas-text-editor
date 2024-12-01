@@ -2,23 +2,23 @@
 
 A powerful and intuitive text editor built with HTML5 Canvas technology. This project allows users to create, edit, and manipulate text elements on a canvas with a modern and user-friendly interface.
 
-## 🌟 Live Demo
+## 🌐Live Demo
 
 [View Live Application](https://canvas-text-editor-beta.vercel.app/)
 
 ## Features
 
-- ✨ Add and edit text anywhere on the canvas
-- 🖱️ Drag and drop text elements
-- 🎨 Rich text formatting options:
+- Add and edit text anywhere on the canvas
+- Drag and drop text elements
+- Rich text formatting options:
   - Multiple font families
   - Font size adjustment
   - Bold, italic, and underline formatting
   - Text colour customization
-- ↩️ Undo/Redo functionality
-- 📱 Responsive design
-- 🎯 Intuitive user interface
-- 💾 State management for text modifications
+- Undo/Redo functionality
+- Responsive design
+- Intuitive user interface
+- State management for text modifications
 
 ## Technologies Used
 
